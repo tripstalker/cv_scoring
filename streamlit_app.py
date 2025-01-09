@@ -1,9 +1,13 @@
+from dotenv import load_dotenv
 import os
+
 
 import openai
 import streamlit as st
 
 from parse_hh import get_candidate_info, get_job_description
+
+load_dotenv()  # Загружаем переменные из .env
 
 client = openai.Client(
     api_key=os.getenv("OPENAI_API_KEY")
